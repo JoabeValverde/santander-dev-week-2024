@@ -6,6 +6,7 @@ import me.dio.service.UserService;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -39,5 +40,11 @@ public class UserServiceImpl implements UserService {
     public void delete(Long id) {
          userRepository.deleteById(id);
     }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
 
 }
