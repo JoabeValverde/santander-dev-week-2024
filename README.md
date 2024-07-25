@@ -49,6 +49,6 @@ classDiagram
 ```
 ## DOCUMENTAÇÃO DA API (SWAGGER)
 
-### [https://santander-dev-week-2024-api-prd.up.railway.app/swagger-ui/index.html]
+### [https://santander-dev-week-2024-api-prd.up.railway.app/swagger-ui.html](https://santander-dev-week-2024-api-prd.up.railway.app/swagger-ui.html)
 
 Esta API ficará disponível no Railway por um período de tempo limitado
