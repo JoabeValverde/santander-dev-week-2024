@@ -3,6 +3,7 @@ package me.dio.service.impl;
 import me.dio.domain.model.User;
 import me.dio.domain.repository.UserRepository;
 import me.dio.service.UserService;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -12,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(@Lazy UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -28,4 +29,15 @@ public class UserServiceImpl implements UserService {
         }
         return userRepository.save(userToCreate);
     }
+
+    @Override
+    public User update(Long id, User userToUpdate) {
+        return (User) userRepository.update(id, userToUpdate).orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public void delete(Long id) {
+         userRepository.deleteById(id);
+    }
+
 }
